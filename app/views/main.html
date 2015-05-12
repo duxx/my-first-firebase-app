@@ -1,0 +1,20 @@
+<h2>{{ title }}</h2>
+
+<div class="jumbotron">
+	<div ng-repeat="message in messages">
+		({{ message.date | date:'yy-MM-dd HH:mm:ss' }}): {{ message.user }} - {{ message.text }}
+	</div>
+</div>
+
+<button class="btn btn-success" ng-click="pageNext()">Next</button>
+<button class="btn btn-success" ng-click="pageBack()">Prev</button>
+
+<div class="row marketing">
+	<input type="text" class="form-control" ng-model="currentUser" />
+	<div class="input-group">
+		<input type="text" class="form-control" ng-model="currentText" />
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button" ng-click="sendMessage()">Send</button>
+		</span>
+	</div>
+</div>
